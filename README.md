@@ -11,9 +11,13 @@ This project utilizes a dataset hosted on S3 to analyze the healthcare costs ass
 5. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-(EDA))
 6. [Machine Learning Algorithms](#machine-learning-algorithms)
 7. [Visualization](#visualization)
-8. [Conclusion](#conclusion)
-9. [Installation](#installation)
-10. [Usage](#usage)
+8. [Application](#application)
+   - [Libraries Used](#libraries-used)
+   - [UI Components](#ui-components)
+   - [Server Logic](#server-logic)
+11. [Conclusion](#conclusion)
+12. [Installation](#installation)
+13. [Usage](#usage)
 
 #### Objective
 The main objective of this project is to delve deep into the healthcare data to extract meaningful insights and develop predictive models that can accurately forecast individual healthcare costs based on a range of factors.
@@ -70,7 +74,41 @@ Visualization plays a critical role in the analysis of data, offering a graphica
 
 Throughout the project, the ggplot2 and plotly libraries were extensively utilized to create these visualizations, offering a rich and comprehensive view of the data. The visualizations created were integral in guiding the data analysis process, offering clear insights that informed the development of predictive models.
 
-#### Conclusion
+## Application 
+
+This section describes the R Shiny application developed to interactively analyze and predict healthcare costs based on various factors. The application utilizes several R packages including `shiny`, `shinydashboard`, `shinyalert`, `plotly`, `tidyverse`, and others to create an interactive web-based dashboard.
+
+### Libraries Used
+
+- `shiny`, `shinydashboard`, `shinyalert`: For creating the interactive web application and displaying alerts.
+- `plotly`: For creating interactive plots.
+- `tidyverse`, `dplyr`, `magrittr`: For data manipulation and cleaning.
+- `caret`: For creating the predictive models.
+- `imputeTS`: For imputing missing data.
+- `keras`, `neuralnet`: For creating and evaluating neural network models.
+- `mlbench`: A collection of machine learning benchmarks.
+
+### UI Layout
+
+The user interface of the application is structured into three main sections:
+
+1. **Welcome Page**: Displays a home image and serves as the landing page of the application.
+2. **Dashboard**: Contains tabs for various exploratory data analysis plots, providing insights into the data through different perspectives like maps, histograms, box plots, and scatter plots.
+3. **Widgets**: A section where users can input various parameters like age, BMI, smoking status, etc., to predict healthcare costs using different machine learning models.
+
+### Server Logic
+
+The server logic of the application includes functionalities like:
+
+1. **Image Rendering**: Renders an image on the welcome page.
+2. **Predictive Modeling**: Allows users to input various parameters and predicts the healthcare costs using selected machine learning models. The predictive models are loaded from saved RDS files and TensorFlow model files for the neural network.
+3. **Data Visualization**: Utilizes the `plotly` package to create interactive plots based on the data, giving insights into factors like the impact of smoking status, number of children, etc., on healthcare costs.
+4. **Data Processing**: Involves reading the data from a CSV file hosted on an S3 bucket, cleaning, and transforming the data to be used in plots and predictive modeling.
+
+### Conclusion
+
+This R Shiny application serves as a comprehensive tool for analyzing and predicting healthcare costs, integrating data visualization and machine learning in a user-friendly interface. It stands as a testament to leveraging the power of R and Shiny for data science applications, showcasing the ability to derive insights and predictions from data interactively.
+
 This project stands as a testament to the application of data science in improving healthcare outcomes. Through rigorous data analysis and the implementation of various machine learning models, we have developed a robust system capable of predicting individual healthcare costs with high accuracy. As we continue to refine and expand our dataset, we aspire to further enhance the predictive accuracy of our models, contributing to a more efficient and informed healthcare sector.
 
 #### Installation
